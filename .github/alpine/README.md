@@ -130,4 +130,14 @@ A real QEMU 8.2.2 run with `ALPINE_BOOT_TIMEOUT_SECS=1` returned exit status
 one, stopped the emulator and retained its log under `qemu-logs/alpine-timeout/`.
 ShellCheck 0.9.0, actionlint 1.7.12 and shell syntax checks also passed.
 
-The complete hosted GitHub Actions run remains to be checked after submission.
+## Hosted Results
+
+On 2026-10-02, GitHub Actions
+[run 37007173205](https://github.com/manchangfengxu/rustsbi/actions/runs/37007173205)
+tested commit `7dd47a8cff7fc2de9e43654818febd8027b8dc3a` on Ubuntu 24.04.
+All three matrix jobs passed the serial checks, built RustSBI from that checkout,
+reached Alpine userspace, passed the guest assertions, and exited QEMU cleanly.
+
+The uploaded `alpine-log-sbi`, `alpine-log-u-boot` and `alpine-log-edk2`
+artifacts were downloaded and checked for firmware and userspace evidence,
+the complete success marker, and the guest's `reboot: Power down` message.
