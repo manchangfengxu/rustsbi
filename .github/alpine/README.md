@@ -92,8 +92,9 @@ Acceptance requires all of the following for each path:
 
 Failure checks cover missing markers, echoed markers, fatal errors, nonzero
 QEMU exits and timeout. Logs must survive every failure. The workflow runs on
-relevant pull requests and pushes, supports manual dispatch, and always attempts
-to upload each path's log.
+relevant pull requests to `main` and pushes to `main` or `ci/**`, supports manual
+dispatch, and always attempts to upload each path's log. Pushing a `ci/` branch
+also runs the matrix in a fork before opening an upstream pull request.
 
 Override `ALPINE_QEMU` to test another emulator binary, `ALPINE_RUSTSBI` to test
 a firmware input, and `ALPINE_BOOT_TIMEOUT_SECS` to shorten failure experiments.

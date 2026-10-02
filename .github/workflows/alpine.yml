@@ -17,7 +17,7 @@ on:
       - "firmware/prototyper/**"
       - "firmware/runtime/**"
   push:
-    branches: ["main"]
+    branches: ["main", "ci/**"]
     paths:
       - ".cargo/**"
       - ".github/alpine/**"
